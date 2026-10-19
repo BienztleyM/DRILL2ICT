@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rate A Movie</title>
+    <style>
+        /* Base page styling with Light Black background */
+        body {
+            background-color: #1a1a1e;
+            font-family: 'Courier New', Courier, monospace;
+            color: #f0f0f0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 40px 15px;
+            margin: 0;
+        }
+
+        /* Header Title with Dark Blue */
+        h1 {
+            background-color: #0b2545;
+            color: #ffffff;
+            padding: 10px 45px;
+            border-radius: 6px;
+            font-size: 26px;
+            letter-spacing: 2px;
+            margin: 0 0 10px 0;
+            border: 1px solid #134074;
+            text-align: center;
+        }
+
+        .subtitle {
+            color: #a0aab5;
+            font-size: 14px;
+            margin-bottom: 25px;
+            text-align: center;
+        }
+
+        /* Main Container Card */
+        .card {
+            background-color: #24242c;
+            border: 2px solid #0056b3;
+            border-radius: 12px;
+            width: 100%;
+            max-width: 500px;
+            padding: 30px;
+            box-sizing: border-box;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+        }
+
+        /* Top Icon Styling */
+        .icon-container {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .clapper-icon {
+            width: 80px;
+            height: 80px;
+            background: radial-gradient(circle, #d90429 0%, #8d0801 100%);
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid #0056b3;
+        }
+
+        /* Form Controls */
+        .input-field {
+            width: 100%;
+            padding: 12px;
+            background-color: #1a1a1e;
+            border: 1px solid #0056b3;
+            border-radius: 6px;
+            color: #ffffff;
+            font-family: inherit;
+            font-size: 14px;
+            box-sizing: border-box;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .input-field::placeholder {
+            color: #8093a7;
+        }
+
+        .input-field:focus {
+            outline: none;
+            border-color: #ef233c;
+        }
+
+        .section-label {
+            display: block;
+            font-weight: bold;
+            color: #ffffff;
+            font-size: 14px;
+            margin-bottom: 10px;
+        }
+
+        .section-label em {
+            color: #ef233c;
+            font-weight: normal;
+        }
+
+        /* Inline Items (Genres & Ratings) */
+        .options-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-bottom: 20px;
+        }
+
+        .options-group label {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 14px;
+            cursor: pointer;
+            color: #d1d5db;
+        }
+
+        /* Custom Checkbox and Radio Colors */
+        input[type="checkbox"], input[type="radio"] {
+            accent-color: #ef233c;
+            cursor: pointer;
+        }
+
+        textarea.input-field {
+            height: 80px;
+            resize: vertical;
+        }
+
+        /* Submit Button with Red Accent */
+        .submit-btn {
+            width: 100%;
+            background-color: #d90429;
+            color: #ffffff;
+            border: none;
+            padding: 12px;
+            font-family: inherit;
+            font-weight: bold;
+            font-size: 15px;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+            margin-bottom: 15px;
+        }
+
+        .submit-btn:hover {
+            background-color: #ef233c;
+        }
+
+        /* Footer Link */
+        .tips-text {
+            font-size: 13px;
+            color: #a0aab5;
+            margin: 0;
+            text-align: left;
+        }
+
+        .tips-text a {
+            color: #ef233c;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>RATE A MOVIE</h1>
+    <div class="subtitle">Share your top pick movie and write a review.</div>
+
+    <div class="card">
+        <!-- Circular Clapper Icon Container -->
+        <div class="icon-container">
+            <div class="clapper-icon">
+                <svg width="45" height="45" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="2" y="4" width="20" height="16" rx="2" ry="2"></rect>
+                    <path d="M2 8h20"></path>
+                    <path d="M6 4l2 4"></path>
+                    <path d="M11 4l2 4"></path>
+                    <path d="M16 4l2 4"></path>
+                </svg>
+            </div>
+        </div>
+
+        <form>
+            <!-- Movie Title Field -->
+            <input type="text" name="title" class="input-field" placeholder="Movie Title">
+
+            <!-- Genre Selection -->
+            <label class="section-label">Genres <em>(select all that apply)</em>:</label>
+            <div class="options-group">
+                <label><input type="checkbox" name="genre" value="Action"> Action</label>
+                <label><input type="checkbox" name="genre" value="Comedy"> Comedy</label>
+                <label><input type="checkbox" name="genre" value="Drama"> Drama</label>
+                <label><input type="checkbox" name="genre" value="Fantasy"> Fantasy</label>
+                <label><input type="checkbox" name="genre" value="Sci-Fi"> Sci-Fi</label>
+            </div>
+
+            <!-- Rating Selection -->
+            <label class="section-label">Rating:</label>
+            <div class="options-group">
+                <label><input type="radio" name="rating" value="1"> ⭐</label>
+                <label><input type="radio" name="rating" value="2"> ⭐⭐</label>
+                <label><input type="radio" name="rating" value="3"> ⭐⭐⭐</label>
+                <label><input type="radio" name="rating" value="4"> ⭐⭐⭐⭐</label>
+                <label><input type="radio" name="rating" value="5"> ⭐⭐⭐⭐⭐</label>
+            </div>
+
+            <!-- Review Text Field -->
+            <textarea name="review" class="input-field" placeholder="Write your review..."></textarea>
+
+            <!-- Submit Button -->
+            <button type="submit" class="submit-btn">Submit Review</button>
+        </form>
+
+        <p class="tips-text">Movie Review Tips: Click <a href="#">here</a></p>
+    </div>
+
+</body>
+</html>
